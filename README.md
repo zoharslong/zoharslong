@@ -8,5 +8,5 @@
 
 ### Important updates
 #### zoharslong_0.1.0 210507
-> Rebuilt by vue-cli.  
+> Rebuilt by vue-cli. Repository wwwv1 is now deprecated.  
 > Baned history router.  
