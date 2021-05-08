@@ -28,8 +28,54 @@ const ptn_ech = {
     },
   },
   dataZoom: [
-    { show: true, realtime: true },
-    { type: "inside", realtime: true },
+    {
+      type: "inside",
+      realtime: true,
+      minSpan: 20,
+      maxSpan:100
+    }, // 内部缩放
+    {
+      type: "slider",
+      show: true,
+      realtime: true,
+      minSpan: 20,
+      maxSpan: 100,
+      backgroundColor: ccs_prm.clr_bsc[0],  // 底色
+      borderColor: ccs_prm.clr_bsc['999'],  // 边线
+      dataBackground: {
+        color: ccs_prm.clr_bsc['996'],
+        areaStyle: {
+          color: ccs_prm.clr_bsc['998'],
+        },
+        lineStyle: {
+          color: ccs_prm.clr_bsc['996'],
+        }
+      },  // 整体数据图
+      fillerColor: 'rgb(197, 197, 197, 0.2)', // 选中区域底色（需要透明因此采用rgb）
+      selectedDataBackground: {
+        lineStyle: {
+          color: ccs_prm.clr_bsc['996'],
+        },
+        areaStyle: {
+          color: ccs_prm.clr_bsc['996'],
+        }
+      },  // 选中区域的数据图
+      handleStyle: {
+        borderColor: ccs_prm.clr_bsc['996'],
+      },  // 选中区域的数据图
+      moveHandleStyle: {
+        borderColor: ccs_prm.clr_bsc['996'],
+      },
+      emphasis: {
+        handleStyle: {
+          borderColor: ccs_prm.clr_bsc['995'],
+        },
+      }, // 鼠标悬停时的强调样式
+      brushSelect: false,  // 手工刷选功能是否开启
+      // brushStyle: {
+      //   color: 'rgb(128, 128, 128)',
+      // }
+    }, // 滑动条
   ],
   xAxis: [
     {
