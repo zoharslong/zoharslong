@@ -8,13 +8,31 @@ const routes: Array<RouteRecordRaw> = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: "/ocr",
+    name: "Ocr",
     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
+    // this generates a separate chunk (ocr.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    component: () => import(/* webpackChunkName: "Home" */ "../views/Ocr.vue"),
+  },
+  {
+    path: "/licenseplate",
+    name: "LicensePlate",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/LicensePlate.vue"),
+  },
+  {
+    path: "/pyzohar",
+    name: "Pyzohar",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/Pyzohar.vue"),
+  },
+  {
+    path: "/reference",
+    name: "Reference",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/Reference.vue"),
+  },
 ]
 
 const router = createRouter({

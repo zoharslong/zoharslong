@@ -1,0 +1,47 @@
+@charset "UTF-8";
+body {
+  background-color: #E0E0E0;
+  margin: 0;
+}
+#app {
+  font-family: Microsoft YaHei, Arial, sans-serif, Mono, Helvetica, Avenir;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: #ffffff;
+  color: #424242;
+}
+#nav {
+  padding: 30px 5%;
+  text-align: right;
+  a {
+    color: #424242;
+    &.router-link-exact-active {
+      color: #77A753;
+      font-weight: bold;
+    }
+  }
+  a:hover{ // 等同于 animation: turncolor 1.5s 1;
+    animation-name: turncolor;
+    animation-duration:1.5s;
+    animation-iteration-count: 1; // 也可以是某个数字代表循环次数
+  }
+} // 导航栏
+pre {
+  white-space:pre-wrap;/*css-3*/
+  white-space:-moz-pre-wrap;/*Mozilla,since1999*/
+  white-space:-o-pre-wrap;/*Opera7*/
+  word-wrap:break-word;/*InternetExplorer5.5+*/
+  margin: 0;
+  font-family: consolas, Microsoft YaHei, Arial, sans-serif, Mono, Helvetica, Avenir;
+  code {
+    font-family: consolas, Microsoft YaHei, Arial, sans-serif, Mono, Helvetica, Avenir;
+  }
+} // 代码块的css, 与css_prm.clr_scp中的上级div块相互配合实现均一行距
+
+@keyframes turncolor{20%{color:#D1887E}}  // 字体变红再还原
+@keyframes turnbackground{20%{background-color:#D1887E}}  // 背景变红再还原
+@keyframes load{
+  0%,40%,100%{transform: scaleY(0.4);}
+  20%{transform:scaleY(1);background: #C4D9A9; }
+}   // 页面缓冲动画 page loading effects

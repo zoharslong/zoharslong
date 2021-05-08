@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <img
+      alt="home logo"
+      style="max-height: 100px"
+      src="../../public/img/logo01.gif"
+    />
+    <LoadingPart msg="{'cls':'.loadingpart','fmt':'fixed','dly':1}" />
+    <HelloWorld msg="Welcome to xzzsmeadow.com" />
+    <FooterPart msg="vue-cli, echarts, flask, python, mongodb" />
   </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+<script>
+/* eslint-disable */
+import HelloWorld from "@/components/HelloWorld.vue";
+import LoadingPart from "@/components/LoadingPart.vue";
+import FooterPart from "@/components/FooterPart.vue"; // @ is an alias to /src
 
-@Options({
+export default {
+  name: "Home",
   components: {
+    LoadingPart,
     HelloWorld,
+    FooterPart,
   },
-})
-export default class Home extends Vue {}
+  mounted() {
+    this.$store.dispatch("fnc_tck_act"); // tick counting
+    this.$store.dispatch("fnc_usa_act"); // visit log
+  },
+};
 </script>
